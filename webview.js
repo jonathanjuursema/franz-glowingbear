@@ -6,8 +6,7 @@ module.exports = Franz => {
 		for (let i = 0; i < indirectElements.length; i += 1) {
 			if (indirectElements[i].innerHTML.length > 0) indirect++;
 		}
-		console.log(direct, indirect);
-		Franz.setBadge(direct, indirect);
+		Franz.setBadge(Math.max(direct, 0), Math.max(indirect, 0));
 	};
 	Franz.loop(getMessages);
 };
